@@ -10,18 +10,19 @@ namespace RazorLab1.Controllers
 {
     public class HomeController : Controller
     {
-        Model myModel = new Model
-        {
-            ModelID = 1,
-            Name = "Potato",
-            Description = "Are great",
-            Category = "Food",
-            Price = 123
-        };
+        List<Model> information = new List<Model>();
         // GET: Home
         public ActionResult Index()
         {
-            return View(myModel);
+            var keys = Request.ServerVariables.Keys;
+            for(int i = 0; i < keys.Count; i++)
+            {
+                var Object = new Model();
+                Object.Name = keys[i];
+                Object.Value = Request.ServerVariables.Get(keys[i]);
+                information.Add(Object);
+            }
+            return View(information);
         }
     }
 }

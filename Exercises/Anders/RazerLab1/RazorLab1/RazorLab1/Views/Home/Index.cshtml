@@ -1,20 +1,22 @@
-﻿@model RazorLab1.Models.Model
+﻿@using RazorLab1.Models
+@using System.Linq;
+@using System.Collections.Specialized;
+
+@model List<Model>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Server Variables";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
+<h2>Variables</h2>
 <body>
-    <div> 
-        @Model.Name
-        @Model.Price
+    <div>
+        <table>
+            @foreach( var item in Model)
+            {
+                <tr><td>@item.Name</td><td>@item.Value</td></tr>
+            }
+        </table>
     </div>
 </body>
 </html>

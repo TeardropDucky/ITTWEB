@@ -1,0 +1,19 @@
+﻿@using System.Collections.Specialized
+@using System.Linq;
+@using Lab01.Models
+
+@model List<ServerVariable>
+
+@{
+    ViewBag.Title = "Server Variables";
+}
+
+<h2>Server Variables</h2>
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.key</td><td>@item.value</td></tr>
+    }
+
+</table>
