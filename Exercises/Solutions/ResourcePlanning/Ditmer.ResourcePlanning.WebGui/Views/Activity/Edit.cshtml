@@ -1,0 +1,19 @@
+﻿@model Activity
+
+@{
+    ViewBag.Title = "Rediger " + @Model.Title;
+}
+
+<h2>Rediger @Model.Title</h2>
+<div>
+    @using (Html.BeginForm("Create", "Activity", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.Id)
+        <div class="form-group">
+            @Html.LabelFor(x => x.Title)
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "Title" })
+            @Html.ValidationMessageFor(x => x.Title)
+        </div>
+        <button type="submit" class="btn btn-default">Gem</button>
+    }
+</div>

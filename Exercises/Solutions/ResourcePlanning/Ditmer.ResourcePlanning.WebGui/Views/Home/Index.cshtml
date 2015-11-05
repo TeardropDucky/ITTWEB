@@ -1,0 +1,15 @@
+﻿@model List<Ditmer.ResourcePlanning.Dto.Activity>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach (var activity in Model)
+        {
+            <h2>@activity.Title</h2>
+        }
+    </div>
+</div>

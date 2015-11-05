@@ -1,0 +1,18 @@
+﻿@model List<Activity>
+
+@{
+    ViewBag.Title = "Activiteter";
+}
+
+<h2>Activiteter</h2>
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="list-group">
+            @foreach (var activity in Model)
+            {
+                <li class="list-group-item">@activity.Title</li>
+            }
+        </ul>
+        <a class="btn btn-default" href="/Activity/Create">Opret ny aktivitet</a>
+    </div>
+</div>
