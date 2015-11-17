@@ -1,7 +1,41 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@using System.Linq;
+@using System.Collections.Specialized;
+@using Hand_in1_grp7.Models;
+
+@model ComponentOverview
+
+
+@{
+    ViewBag.Title = "Components";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Potato</p>
+
+<div>
+    <div class="col-xs-4">
+        <h2>Categories</h2>
+        <ul class="nav nav-pills nav-stacked">
+            @foreach (var item in Model.Categories)
+            {
+                <li role="presentation"><a href="@item.Link">@item.Name</a></li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-xs-8">
+        <h2>Components</h2>
+            @foreach (var item in Model.Components)
+            {
+                //replace # with link
+                <a href="#" class="list-group-item">
+                    <h3 class="list-group-item-heading">@item.Name</h3>
+                    <p class="list-group-item-text">@item.Info</p>
+                </a>
+                
+            }
+    </div>
+</div>
+<form method="post" action="">
+    <input id="potato" name="Potato" type="text" />
+    <input value="Save" type="submit" />
+</form>
