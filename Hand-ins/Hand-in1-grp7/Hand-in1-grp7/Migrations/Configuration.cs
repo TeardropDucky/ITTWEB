@@ -38,7 +38,7 @@ namespace Hand_in1_grp7.Migrations
                            Image = "Skal ikke være en URL",
                            ManufacturerLink = "URL",
                            Category = 1,
-                           CategoryInfo = new Categories { CategoryName = "Arduino" },
+                           CategoryInfo = new Category { CategoryName = "Arduino" },
                        }
                    },
                    UserInfo = new UserInformation
