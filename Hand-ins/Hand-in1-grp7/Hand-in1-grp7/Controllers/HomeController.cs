@@ -46,6 +46,14 @@ namespace Hand_in1_grp7.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            var componentInfo = new ComponentInformation();
+            var component = new Component();
+            componentInfo.ComponentName = "PSoC4";
+            componentInfo.Category = 1;
+            component.ComponentNumber = 10;
+            component.ComponentInfoId = componentInfo.InfoId;
+            addComponentWithInfo(component, componentInfo);
+
             return View();
         }
 
@@ -91,6 +99,14 @@ namespace Hand_in1_grp7.Controllers
             fullComponent.ComponentInfo = db.ComponentInformations.Find(InfoId);
             fullComponent.Components = db.Components.Where(x => x.ComponentInfoId == InfoId).ToList();
             return fullComponent;
+        }
+
+        public void addComponentWithInfo(Component component_, ComponentInformation compInfo_) 
+        {
+            component_.ComponentInfoId = compInfo_.InfoId;
+            db.ComponentInformations.Add(compInfo_);
+            db.Components.Add(component_);
+            
         }
     }
 }
