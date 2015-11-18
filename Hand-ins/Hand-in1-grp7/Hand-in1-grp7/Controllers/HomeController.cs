@@ -19,7 +19,9 @@ namespace Hand_in1_grp7.Controllers
         
         public ActionResult About()
         {
+            string tmp = Request.QueryString["category"];
             var Overview = new ComponentOverview();
+            Overview.SelectedCategory = tmp;
 
             var categories = new List<Category>();
             var components = new List<Component>();
