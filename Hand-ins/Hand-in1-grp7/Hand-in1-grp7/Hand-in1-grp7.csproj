@@ -205,6 +205,7 @@
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\ComponentInformation.cs" />
     <Compile Include="Models\ComponentOverview.cs" />
+    <Compile Include="Models\FullComponent.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoanInformation.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

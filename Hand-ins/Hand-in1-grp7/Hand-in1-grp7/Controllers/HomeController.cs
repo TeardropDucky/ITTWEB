@@ -75,5 +75,13 @@ namespace Hand_in1_grp7.Controllers
             var categories = db.Categories.ToList();
             return categories;
         }
+
+        public FullComponent getComponents(int InfoId)
+        {
+            FullComponent fullComponent = new FullComponent();
+            fullComponent.ComponentInfo = db.ComponentInformations.Find(InfoId);
+            fullComponent.Components = db.Components.Where(x => x.ComponentInfoId == InfoId).ToList();
+            return fullComponent;
+        }
     }
 }
