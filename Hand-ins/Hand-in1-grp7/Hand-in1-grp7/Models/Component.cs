@@ -2,6 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+
+/*namespace Hand_in1_grp7.Models
+{
+    public class Component
+    {
+        [Key]
+        public int ComponentId { get; set; }
+        public int ComponentNumber { get; set; }
+        public string SerialNr { get; set; }
+        public string AdminComment { get; set; }
+        public string UserComment { get; set; }
+        public int ComponentInfoId {get; set; }
+        [ForeignKey("ComponentInfoId")]
+        public ComponentInformation ComponentInfo { get; set; }
+
+    }
+}*/
 
 namespace Hand_in1_grp7.Models
 {
