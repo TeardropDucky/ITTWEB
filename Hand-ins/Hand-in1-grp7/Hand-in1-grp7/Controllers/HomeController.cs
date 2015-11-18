@@ -7,13 +7,16 @@ using Hand_in1_grp7.Models;
 
 namespace Hand_in1_grp7.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult About()
         {
             var Overview = new ComponentOverview();
@@ -35,6 +38,7 @@ namespace Hand_in1_grp7.Controllers
             return View(Overview);
         }
 
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
