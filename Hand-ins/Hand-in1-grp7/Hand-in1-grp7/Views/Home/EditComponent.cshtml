@@ -1,11 +1,11 @@
-﻿@model Hand_in1_grp7.Models.Component
+﻿@model Hand_in1_grp7.Models.FullComponent
 
 @{
     ViewBag.Title = "EditComponent";
 }
 
 <h2>EditComponent</h2>
-<h3>Info: @Model.Info</h3>
+<h3>Info: @Model.ComponentInfo.ComponentName</h3>
 
 <form method="post" action="~/Home/Contact">
     <input id="potato" name="Potato" type="text" />

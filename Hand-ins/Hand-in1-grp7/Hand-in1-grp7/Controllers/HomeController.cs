@@ -51,17 +51,26 @@ namespace Hand_in1_grp7.Controllers
 
         public ActionResult EditComponent()
         {
-            var Component = new Component();
-            //somehow get what component is picked
-            //var Component = new Component(10, 10, "Im a component");
-            return View(Component);
+            string category = Request.QueryString["ID"];
+            int componentInfoID = 0;
+            if (category != null)
+            {
+                Int32.TryParse(category, out componentInfoID);
+            }
+            var fullComponent = getComponents(componentInfoID);
+            return View(fullComponent);
         }
 
         public ActionResult Component()
         {
-            var Component = new Component();
-           // var Component = new Component(1, 1, "We are in componentView");
-            return View(Component);
+            string category = Request.QueryString["ID"];
+            int componentInfoID = 0;
+            if (category != null)
+            {
+                Int32.TryParse(category, out componentInfoID);
+            }
+            var fullComponent = getComponents(componentInfoID);
+            return View(fullComponent);
         }
 
         public List<ComponentInformation> getComponentInfo(int categoryID_)
