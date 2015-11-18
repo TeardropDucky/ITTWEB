@@ -10,6 +10,6 @@ namespace Hand_in1_grp7.Models
         public List<ComponentInformation> Components { get; set; }
         public List<Category> Categories { get; set; }
 
-        public string SelectedCategory { get; set; }
+        public int SelectedCategory { get; set; }
     }
 }

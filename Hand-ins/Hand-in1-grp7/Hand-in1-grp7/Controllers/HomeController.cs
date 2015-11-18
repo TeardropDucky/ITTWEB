@@ -20,24 +20,19 @@ namespace Hand_in1_grp7.Controllers
         
         public ActionResult About()
         {
+            
             string category = Request.QueryString["category"];
             var Overview = new ComponentOverview();
 
-            if(category != null)
-                Overview.SelectedCategory = category;
-
-
             var categories = new List<Category>();
-            var components = new List<ComponentInformation>();
 
-            /*for (int i = 0; i < 10; i++)
+            if (category != null)
             {
-                var potato = new Category();
-                potato.Name = "hej" + i;
-                //potato.Link = "#";
-                categories.Add(potato);
-                components.Add(new Component(i, i, "potato" + i));
-            }*/
+                var categoryID = 0;
+                Int32.TryParse(category, out categoryID);
+                Overview.SelectedCategory = categoryID;
+            }
+            var components = getComponentInfo(Overview.SelectedCategory);                
 
             Overview.Categories = categories;
             Overview.Components = components;
