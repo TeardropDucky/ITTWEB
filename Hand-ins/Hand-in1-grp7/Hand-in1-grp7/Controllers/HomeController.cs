@@ -27,7 +27,7 @@ namespace Hand_in1_grp7.Controllers
 
 
             var categories = new List<Category>();
-            var components = new List<Component>();
+            var components = new List<ComponentInformation>();
 
             /*for (int i = 0; i < 10; i++)
             {
@@ -36,10 +36,10 @@ namespace Hand_in1_grp7.Controllers
                 //potato.Link = "#";
                 categories.Add(potato);
                 components.Add(new Component(i, i, "potato" + i));
-            }
+            }*/
 
             Overview.Categories = categories;
-            Overview.Components = components;*/
+            Overview.Components = components;
 
             return View(Overview);
         }

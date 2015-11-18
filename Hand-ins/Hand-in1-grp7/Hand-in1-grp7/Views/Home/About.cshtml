@@ -30,7 +30,7 @@
             {
                 foreach (var item in Model.Categories)
                 {
-                    <li role="presentation"><a href="?category=@item.Name">@item.Name</a></li>
+                    <li role="presentation"><a href="?category=@item.CategoryId">@item.CategoryName</a></li>
                 }
             }
             else
@@ -44,17 +44,17 @@
         <h2>Components</h2>
             @if(Model.Components.Count>0){
                 foreach (var item in Model.Components)
-                {
+                {   
                     //replace # with link
                     <div class="col-xs-8">
-                        <a href="~/Home/Component?ID=@item.ID" class="list-group-item">
-                        <h3 class="list-group-item-heading">@item.Name</h3>
-                        <p class="list-group-item-text">@item.Info</p>
+                        <a href="~/Home/Component?ID=@item.InfoId" class="list-group-item">
+                        <h3 class="list-group-item-heading">@item.ComponentName</h3>
+                        <p class="list-group-item-text">@item.InfoId</p>
                         </a>
                     </div>
                     <div class="col-xs-4">
                         <div class="btn-group-vertical" role="group">
-                            <a href="~/Home/EditComponent?ID=@item.ID" class="btn btn-warning" role="button">Edit</a>
+                            <a href="~/Home/EditComponent?ID=@item.InfoId" class="btn btn-warning" role="button">Edit</a>
                             <a href="~/Home" class="btn btn-danger" role="button">Delete</a>
                         </div>
                     </div>

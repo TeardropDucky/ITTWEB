@@ -19,7 +19,7 @@ namespace Hand_in1_grp7.Models
         public string ManufacturerLink { get; set; }
         public int Category { get; set; }
         [ForeignKey("Category")]
-        public Categories CategoryInfo { get; set; }
+        public Category CategoryInfo { get; set; }
 
 
 
