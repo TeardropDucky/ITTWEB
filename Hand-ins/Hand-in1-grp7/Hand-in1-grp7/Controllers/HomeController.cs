@@ -16,7 +16,6 @@ namespace Hand_in1_grp7.Controllers
 
         public ActionResult About()
         {
-            //Lav klasse der indeholder en liste af Components og Categories
             var Overview = new ComponentOverview();
 
             var categories = new List<Category>();
@@ -24,10 +23,10 @@ namespace Hand_in1_grp7.Controllers
             for (int i = 0; i < 10; i++)
             {
                 var potato = new Category();
-                potato.Name = "hej " + i;
+                potato.Name = "hej" + i;
                 //potato.Link = "#";
                 categories.Add(potato);
-                components.Add(new Component(i, i, "potato " + i));
+                components.Add(new Component(i, i, "potato" + i));
             }
 
             Overview.Categories = categories;
@@ -43,7 +42,7 @@ namespace Hand_in1_grp7.Controllers
             return View();
         }
 
-        public ActionResult AddComponent()
+        public ActionResult EditComponent()
         {
 
             return View();

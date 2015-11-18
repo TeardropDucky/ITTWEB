@@ -12,6 +12,17 @@
 
 
 <div>
+
+    <div class="col-xs-4">
+        <a href="~/Home/Contact" class="btn btn-default">Changes to category</a>
+    </div>
+    <div class="col-xs-4">
+        <a href="~/Home/Contact" class="btn btn-default">Potato</a>
+    </div>
+    <div class="col-xs-4">
+        <a href="~/Home/Contact" class="btn btn-default">Add component</a>
+    </div>
+
     <div class="col-xs-4">
         <h2>Categories</h2>
         <ul class="nav nav-pills nav-stacked">
@@ -27,15 +38,18 @@
             @foreach (var item in Model.Components)
             {
                 //replace # with link
-                <a href="#" class="list-group-item">
+                <div class="col-xs-8">
+                    <a href="#@item.Name" class="list-group-item">
                     <h3 class="list-group-item-heading">@item.Name</h3>
                     <p class="list-group-item-text">@item.Info</p>
-                    <div class="btn-group" role="group">
+                    </a>
+                </div>
+                <div class="col-xs-4">
+                    <div class="btn-group-vertical" role="group">
                         <a href="~/Home/Contact" class="btn btn-warning" role="button">Edit</a>
                         <a href="~/Home" class="btn btn-danger" role="button">Delete</a>
                     </div>
-                </a>
-                
+                </div>
             }
     </div>
 </div>
