@@ -26,6 +26,39 @@ namespace Hand_in1_grp7.Migrations
                    ReservationId = "ErReserveret",
                    ComponentData = new Component
                    {
+                       ComponentNumber = 2,
+                       SerialNr = "234567",
+                       AdminComment = "Virker Det?",
+                       UserComment = "Vi finder ud af det snart.",
+                       ComponentInfo = new ComponentInformation
+                       {
+                           ComponentName = "ArduinoMk2",
+                           ComponentInfo = "Noget mærkeligt",
+                           DataSheet = "Min URL",
+                           Image = "Skal ikke være en URL",
+                           ManufacturerLink = "URL",
+                           Category = 1,
+                           CategoryInfo = new Categories { CategoryName = "Arduino" },
+                       }
+                   },
+                   UserInfo = new UserInformation
+                   {
+                       StudentId = "2012xxxxx",
+                       CellNr = "88888888",
+                       FullName = "Peter fra Leasy",
+                   },
+               });
+            /*context.LoanInformation.AddOrUpdate(p => p.LoanId,
+               new LoanInformation
+               {
+                   LoanDate = DateTime.Today,
+                   ReturnDate = DateTime.Today.AddDays(1),
+                   IsEmailSent = "yes",
+                   ReservationDate = DateTime.Today.AddDays(-1),
+                   OwnerId = "EtEllerAndetFirma",
+                   ReservationId = "ErReserveret",
+                   ComponentData = new Component
+                   {
                        ComponentNumber = 1,
                        SerialNr = "123321",
                        AdminComment = "Virker Det?",
@@ -46,7 +79,9 @@ namespace Hand_in1_grp7.Migrations
                        CellNr = "50587609",
                        FullName = "Magnus Schou Abildgren",
                    },
-               });
+               });*/
+
+            
             //new Component
             //{
             //    ComponentNumber = 1,
