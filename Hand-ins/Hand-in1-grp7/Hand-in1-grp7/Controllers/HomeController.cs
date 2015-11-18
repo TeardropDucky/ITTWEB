@@ -24,7 +24,8 @@ namespace Hand_in1_grp7.Controllers
             string category = Request.QueryString["category"];
             var Overview = new ComponentOverview();
 
-            var categories = new List<Category>();
+            var categories = getCategories();
+            //var categories = new List<Category>();
 
             if (category != null)
             {
