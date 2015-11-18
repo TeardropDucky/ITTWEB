@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
-/*namespace Hand_in1_grp7.Models
+namespace Hand_in1_grp7.Models
 {
     public class Component
     {
@@ -21,9 +21,9 @@ using System.Globalization;
         public ComponentInformation ComponentInfo { get; set; }
 
     }
-}*/
+}
 
-namespace Hand_in1_grp7.Models
+/*namespace Hand_in1_grp7.Models
 {
     public class Component
     {
@@ -51,4 +51,4 @@ namespace Hand_in1_grp7.Models
             UserComment = User_Comment;
         }
     }
-}
+}*/

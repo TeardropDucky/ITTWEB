@@ -28,7 +28,8 @@ namespace Hand_in1_grp7.Controllers
 
             var categories = new List<Category>();
             var components = new List<Component>();
-            for (int i = 0; i < 10; i++)
+
+            /*for (int i = 0; i < 10; i++)
             {
                 var potato = new Category();
                 potato.Name = "hej" + i;
@@ -38,7 +39,7 @@ namespace Hand_in1_grp7.Controllers
             }
 
             Overview.Categories = categories;
-            Overview.Components = components;
+            Overview.Components = components;*/
 
             return View(Overview);
         }
@@ -53,14 +54,16 @@ namespace Hand_in1_grp7.Controllers
 
         public ActionResult EditComponent()
         {
+            var Component = new Component();
             //somehow get what component is picked
-            var Component = new Component(10, 10, "Im a component");
+            //var Component = new Component(10, 10, "Im a component");
             return View(Component);
         }
 
         public ActionResult Component()
         {
-            var Component = new Component(1, 1, "We are in componentView");
+            var Component = new Component();
+           // var Component = new Component(1, 1, "We are in componentView");
             return View(Component);
         }
     }

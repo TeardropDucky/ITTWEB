@@ -1,0 +1,58 @@
+﻿@model Hand_in1_grp7.Models.Component
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Component</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentInfo.ComponentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentInfo.ComponentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserComment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComponentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
