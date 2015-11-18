@@ -283,7 +283,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\EditComponent.cshtml" />
     <Content Include="Views\Home\Component.cshtml" />
     <Content Include="Views\LoanInformations\Create.cshtml" />
     <Content Include="Views\LoanInformations\Delete.cshtml" />
@@ -305,6 +304,7 @@
     <Content Include="Views\ComponentInformations\Details.cshtml" />
     <Content Include="Views\ComponentInformations\Edit.cshtml" />
     <Content Include="Views\ComponentInformations\Index.cshtml" />
+    <Content Include="Views\Components\ComponentInformationOptions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511181331526_Initial.resx">

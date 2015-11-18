@@ -54,7 +54,7 @@ namespace Hand_in1_grp7.Controllers
             {
                 db.ComponentInformations.Add(componentInformation);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect("~/Components/Create?ID=" + componentInformation.InfoId);
             }
 
             ViewBag.Category = new SelectList(db.Categories, "CategoryId", "CategoryName", componentInformation.Category);

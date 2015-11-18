@@ -17,7 +17,15 @@ namespace Hand_in1_grp7.Controllers
         // GET: Components
         public ActionResult Index()
         {
+            string category = Request.QueryString["ID"];
+            int componentInfoID = 1;
             var components = db.Components.Include(c => c.ComponentInfo);
+            if (category != null)
+            {
+                Int32.TryParse(category, out componentInfoID);
+                components = db.Components.Where(x => x.ComponentInfoId == componentInfoID);
+            }   
+
             return View(components.ToList());
         }
 
@@ -52,6 +60,14 @@ namespace Hand_in1_grp7.Controllers
         {
             if (ModelState.IsValid)
             {
+                string category = Request.QueryString["ID"];
+                int componentInfoID = 1;
+                if (category != null)
+                {
+                    Int32.TryParse(category, out componentInfoID);
+                }
+                component.ComponentInfoId = componentInfoID;
+
                 db.Components.Add(component);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -127,6 +143,12 @@ namespace Hand_in1_grp7.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult ComponentInformationOptions()
+        {
+            var ComponentInformation = db.ComponentInformations.ToList();
+            return View(ComponentInformation);
         }
     }
 }

@@ -7,14 +7,20 @@
 <h2>@Model.ComponentInfo.ComponentName</h2>
 
 <ul class="list-group">
-    @foreach (var item in Model.Components)
+    @if (Model.Components.Count > 0) { 
+        foreach (var item in Model.Components)
+        {
+            <li class="list-group-item">
+                <div class="list-group-item-text">Component Number: @item.ComponentNumber</div>
+                <div class="list-group-item-text">Serial Number: @item.SerialNr</div>
+                <a href="@Model.ComponentInfo.DataSheet" class="btn btn-default" role="button">Datasheet</a>
+                <a href="@Model.ComponentInfo.ManufacturerLink" class="btn btn-default" role="button">Manufactor</a>
+            </li>
+        }
+    }
+    else
     {
-        <li class="list-group-item">
-            <div class="list-group-item-text">Component Number: @item.ComponentNumber</div>
-            <div class="list-group-item-text">Serial Number: @item.SerialNr</div>
-            <a href="@Model.ComponentInfo.DataSheet" class="btn btn-default" role="button">Datasheet</a>
-            <a href="@Model.ComponentInfo.ManufacturerLink" class="btn btn-default" role="button">Manufactor</a>
-        </li>
+        <p>No components in ComponentClass</p>
     }
 </ul>
 
