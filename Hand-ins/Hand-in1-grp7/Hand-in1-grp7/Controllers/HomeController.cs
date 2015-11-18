@@ -68,5 +68,11 @@ namespace Hand_in1_grp7.Controllers
             var componentInfo = db.ComponentInformations.Where(c => c.Category == categoryID_).ToList();
             return componentInfo;
         }
+
+        public List<Category> getCategories()
+        {
+            var categories = db.Categories.ToList();
+            return categories;
+        }
     }
 }
