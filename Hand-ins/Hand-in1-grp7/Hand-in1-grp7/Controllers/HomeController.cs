@@ -10,13 +10,13 @@ namespace Hand_in1_grp7.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        [Authorize]
+        
         public ActionResult Index()
         {
             return View();
         }
 
-        [Authorize]
+        
         public ActionResult About()
         {
             var Overview = new ComponentOverview();
@@ -38,7 +38,7 @@ namespace Hand_in1_grp7.Controllers
             return View(Overview);
         }
 
-        [Authorize]
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -48,8 +48,15 @@ namespace Hand_in1_grp7.Controllers
 
         public ActionResult EditComponent()
         {
+            //somehow get what component is picked
+            var Component = new Component(10, 10, "Im a component");
+            return View(Component);
+        }
 
-            return View();
+        public ActionResult Component()
+        {
+            var Component = new Component(1, 1, "We are in componentView");
+            return View(Component);
         }
     }
 }
