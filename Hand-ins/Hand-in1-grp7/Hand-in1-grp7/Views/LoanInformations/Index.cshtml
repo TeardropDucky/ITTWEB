@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Hand_in1_grp7.Models.LoanInformation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentData.SerieNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserInfo.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoanDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEmailSent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentData.SerieNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserInfo.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoanDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReturnDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEmailSent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReservationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReservationId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LoanId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LoanId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LoanId })
+        </td>
+    </tr>
+}
+
+</table>

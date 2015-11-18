@@ -189,10 +189,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoanInformationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511181331526_Initial.cs" />
+    <Compile Include="Migrations\201511181331526_Initial.Designer.cs">
+      <DependentUpon>201511181331526_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Category.cs" />
@@ -274,8 +280,17 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\EditComponent.cshtml" />
     <Content Include="Views\Home\Component.cshtml" />
+    <Content Include="Views\LoanInformations\Create.cshtml" />
+    <Content Include="Views\LoanInformations\Delete.cshtml" />
+    <Content Include="Views\LoanInformations\Details.cshtml" />
+    <Content Include="Views\LoanInformations\Edit.cshtml" />
+    <Content Include="Views\LoanInformations\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511181331526_Initial.resx">
+      <DependentUpon>201511181331526_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

@@ -1,0 +1,82 @@
+﻿@model Hand_in1_grp7.Models.LoanInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LoanInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentData.SerieNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentData.SerieNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserInfo.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserInfo.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEmailSent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEmailSent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LoanId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
