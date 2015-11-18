@@ -10,6 +10,7 @@ namespace Hand_in1_grp7.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         
         public ActionResult Index()
         {
@@ -65,6 +66,12 @@ namespace Hand_in1_grp7.Controllers
             var Component = new Component();
            // var Component = new Component(1, 1, "We are in componentView");
             return View(Component);
+        }
+
+        public List<ComponentInformation> getComponentInfo(int categoryID_)
+        {
+            var componentInfo = db.ComponentInformations.Where(c => c.Category == categoryID_).ToList();
+            return componentInfo;
         }
     }
 }
