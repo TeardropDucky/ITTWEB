@@ -25,7 +25,7 @@ namespace Hand_in1_grp7.Controllers
             {
                 var potato = new Category();
                 potato.Name = "hej " + i;
-                potato.Link = "#";
+                //potato.Link = "#";
                 categories.Add(potato);
                 components.Add(new Component(i, i, "potato " + i));
             }
@@ -39,6 +39,12 @@ namespace Hand_in1_grp7.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult AddComponent()
+        {
 
             return View();
         }

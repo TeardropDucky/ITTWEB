@@ -7,28 +7,28 @@ namespace Hand_in1_grp7.Models
 {
     public class Component
     {
-        private int id {get; set;}
-        private int number { get; set; }
-        private string serieNr { get; set; }
+        public int ID {get; set;}
+        public int Number { get; set; }
+        public string SerieNr { get; set; }
         public string Name { get; set; }
         public string Info { get; set;}
-        private string datasheet { get; set; }
-        private string image { get; set; } //change image to image and not a link
-        private string manufacturer { get; set; }
-        private List<string> adminComments { get; set; }
-        private List<string> userComment { get; set; }
+        public string Datasheet { get; set; }
+        public string Image { get; set; } //change image to image and not a link
+        public string Manufacturer { get; set; }
+        public List<string> AdminComments { get; set; }
+        public List<string> UserComment { get; set; }
 
-        public Component(int ID, int Number, string ComponentName, string SerieNumber = "0",string Information = "Not provided", string DatasheetLink = "http://i.imgur.com/CaHHiaY.jpg", string Image = "FeelsBadMan.jpg", string ManufacturerLink = "http://i.imgur.com/CaHHiaY.jpg", List<string> AdminComments = null, List<string> UserComment = null){
-            id = ID;
-            number = Number;
+        public Component(int ComponentID, int ComponentNumber, string ComponentName, string SerieNumber = "0",string Information = "Not provided", string DatasheetLink = "http://i.imgur.com/CaHHiaY.jpg", string ComponentImage = "FeelsBadMan.jpg", string ManufacturerLink = "http://i.imgur.com/CaHHiaY.jpg", List<string> Admin_Comments = null, List<string> User_Comment = null){
+            ID = ComponentID;
+            Number = ComponentNumber;
             Name = ComponentName;
-            serieNr = SerieNumber;
+            SerieNr = SerieNumber;
             Info = Information;
-            datasheet = DatasheetLink;
-            image = Image;
-            manufacturer = ManufacturerLink;
-            adminComments = AdminComments;
-            userComment = UserComment;
+            Datasheet = DatasheetLink;
+            Image = ComponentImage;
+            Manufacturer = ManufacturerLink;
+            AdminComments = Admin_Comments;
+            UserComment = User_Comment;
         }
     }
 }

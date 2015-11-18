@@ -8,6 +8,6 @@ namespace Hand_in1_grp7.Models
     public class Category
     {
         public string Name { get; set; }
-        public string Link { get; set; }
+        //public string Link { get; set; }
     }
 }
