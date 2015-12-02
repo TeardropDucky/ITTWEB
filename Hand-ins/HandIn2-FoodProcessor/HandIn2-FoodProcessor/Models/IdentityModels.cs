@@ -29,5 +29,7 @@ namespace HandIn2_FoodProcessor.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<HandIn2_FoodProcessor.Models.Posts> Posts { get; set; }
     }
 }
