@@ -1,4 +1,10 @@
-﻿@{
+﻿@using System.Linq;
+@using System.Collections.Specialized;
+@using HandIn2_FoodProcessor.Models;
+
+@model List<Posts>
+
+@{
     ViewBag.Title = "Happy little place";
 }
 @section scripts{ <script src="~/Scripts/angular.js"> </script>}
@@ -7,7 +13,10 @@
 
 <div ng-controller="Home">
     <div class="col-sm-6">
-        <p>soory but Love you</p>
+        @foreach(var item in Model)
+        {
+            <p>@item.User @item.GramProtein @item.Consumable</p>
+        }
     </div>
     <div class="col-sm-6">
 
