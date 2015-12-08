@@ -7,6 +7,7 @@
 @{
     ViewBag.Title = "Happy little place";
 }
+
 @section scripts{ <script src="~/Scripts/angular.js"> </script>}
 
 <h2>@ViewBag.Title.</h2>
@@ -15,7 +16,8 @@
     <div class="col-sm-6">
         @foreach(var item in Model)
         {
-            <p>@item.User @item.GramProtein @item.Consumable</p>
+            <p>@item.GramProtein @item.PostDate</p>
+            <p>@(item.GramProtein + item.Consumable.ProteinPer100Gram)</p>
         }
     </div>
     <div class="col-sm-6">

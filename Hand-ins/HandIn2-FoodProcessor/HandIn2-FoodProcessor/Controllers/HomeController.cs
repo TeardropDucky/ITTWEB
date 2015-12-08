@@ -23,7 +23,18 @@ namespace HandIn2_FoodProcessor.Controllers
                 user.Name = userID;
                 user.UserId = userID;
                 db.UserInfoes.Add(user);
+                db.SaveChanges();
+
+                var derp = new Posts();
+                derp.User = user;
+                derp.PostDate = DateTime.Now;
+                derp.Consumable = db.Consumables.Find(1);
+                derp.GramProtein = 100;
+                db.Posts.Add(derp);
+                db.SaveChanges();
             }
+
+
             
             List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();
             
