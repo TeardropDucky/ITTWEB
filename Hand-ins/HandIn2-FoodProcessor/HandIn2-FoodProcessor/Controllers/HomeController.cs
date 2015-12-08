@@ -17,8 +17,17 @@ namespace HandIn2_FoodProcessor.Controllers
         public ActionResult Index()
         {
             var userID = User.Identity.GetUserName();
+            if (db.UserInfoes.Where(c => c.Name == userID).ToList().Count == 0)
+            {
+                var user = new UserInfo();
+                user.Name = userID;
+                user.UserId = userID;
+                db.UserInfoes.Add(user);
+            }
+            
             List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();
-
+            
+            
             return View(potato);
         }
     }

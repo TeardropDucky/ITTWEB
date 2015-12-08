@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\UserInfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -252,6 +253,11 @@
     <Content Include="Views\Consumables\Details.cshtml" />
     <Content Include="Views\Consumables\Edit.cshtml" />
     <Content Include="Views\Consumables\Index.cshtml" />
+    <Content Include="Views\UserInfoes\Create.cshtml" />
+    <Content Include="Views\UserInfoes\Delete.cshtml" />
+    <Content Include="Views\UserInfoes\Details.cshtml" />
+    <Content Include="Views\UserInfoes\Edit.cshtml" />
+    <Content Include="Views\UserInfoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512071606389_Initial.resx">
