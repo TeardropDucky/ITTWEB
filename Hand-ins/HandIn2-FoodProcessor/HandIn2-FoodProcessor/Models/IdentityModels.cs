@@ -31,5 +31,7 @@ namespace HandIn2_FoodProcessor.Models
         }
 
         public System.Data.Entity.DbSet<HandIn2_FoodProcessor.Models.Posts> Posts { get; set; }
+
+        public System.Data.Entity.DbSet<HandIn2_FoodProcessor.Models.Consumables> Consumables { get; set; }
     }
 }

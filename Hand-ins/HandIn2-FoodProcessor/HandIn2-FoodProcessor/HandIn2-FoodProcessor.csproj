@@ -159,12 +159,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConsumablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512071606389_Initial.cs" />
+    <Compile Include="Migrations\201512071606389_Initial.Designer.cs">
+      <DependentUpon>201512071606389_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Consumables.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -175,6 +181,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\FoodDatabase.mdf" />
+    <Content Include="App_Data\FoodDatabase_log.ldf">
+      <DependentUpon>FoodDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -235,9 +245,16 @@
     <Content Include="Views\Posts\Details.cshtml" />
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
+    <Content Include="Views\Consumables\Create.cshtml" />
+    <Content Include="Views\Consumables\Delete.cshtml" />
+    <Content Include="Views\Consumables\Details.cshtml" />
+    <Content Include="Views\Consumables\Edit.cshtml" />
+    <Content Include="Views\Consumables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201512071606389_Initial.resx">
+      <DependentUpon>201512071606389_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
