@@ -23,11 +23,13 @@ namespace WebAPI.Controllers
             new Product { Id = 9, Name = "Kartoffel", Gram=1.9}
         };
 
+        //makes /api/products/ work
         public IEnumerable<Product>GetAllProducts()
         {
             return products;
         }
 
+       /* //makes /api/product/id working with searching
         public IHttpActionResult GetProduct (int id)
         {
             var product = products.FirstOrDefault((p)=>p.Id == id);
@@ -36,6 +38,19 @@ namespace WebAPI.Controllers
                 return NotFound();
             }
             return Ok(product);
+        }*/
+
+        
+        //makes /api/product/name working with seaching ex: api/products/Kartoffel
+        public IHttpActionResult GetProduct (string id)
+        {
+            var product = products.FirstOrDefault((p) => p.Name == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
         }
+         
     }
 }

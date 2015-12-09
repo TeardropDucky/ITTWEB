@@ -23,14 +23,15 @@ namespace HandIn2_FoodProcessor.Controllers
             new Product { Id = 9, Name = "Kartoffel", Gram=1.9}
         };
 
-        //public IEnumerable<Product> GetAllProducts()
-        //{
-        //    return products;
-        //}
-
-        public IHttpActionResult GetProduct(int id)
+        public IEnumerable<Product> GetAllProducts()
         {
-            var product = products.FirstOrDefault((p) => p.Id == id);
+            return products;
+        }
+
+        // Getting product by name of product
+        public IHttpActionResult GetProduct(string id)
+        {
+            var product = products.FirstOrDefault((p) => p.Name == id);
             if (product == null)
             {
                 return NotFound();
