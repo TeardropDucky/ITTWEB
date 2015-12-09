@@ -17,7 +17,9 @@ namespace HandIn2_FoodProcessor.Controllers
         public ActionResult Index()
         {
             var userID = User.Identity.GetUserName();
-            db.Configuration.LazyLoadingEnabled = true;
+
+            List<UserInfo> item = db.UserInfoes.Where(c => c.Name == userID).ToList();
+            
             if (db.UserInfoes.Where(c => c.Name == userID).ToList().Count == 0)
             {
                 var user = new UserInfo();
@@ -35,15 +37,21 @@ namespace HandIn2_FoodProcessor.Controllers
                 db.SaveChanges();
             }
 
+            //db.Configuration.LazyLoadingEnabled = true;
             
-            
-            List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();
+            //if( )
+            List<Posts> potato = db.Posts.Where(c => c.User.Name == userID && c.Consumable != null).ToList();
+            foreach (var post in potato)
+            {
+                //var consumable = db.Consumables.Where( c => c.)
+                //item.Consumable.ConsumableId = db.
+            }
            
             
             return View(potato);
         }
 
-        public void AddUserConsumable(int userId, string consumableName, double proteinPer100)
+        public void AddUserConsumable(string userId, string consumableName, double proteinPer100)
         {
 
         }
