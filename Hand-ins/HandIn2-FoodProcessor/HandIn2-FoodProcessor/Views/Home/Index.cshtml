@@ -8,38 +8,70 @@
     ViewBag.Title = "Happy little place";
 }
 
-@section scripts{ <script src="~/Scripts/angular.js"> </script>}
+@section scripts{ 
+    @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/Scripts/Angular/proteinneed-controller.js")}
 
 <h2>@ViewBag.Title.</h2>
 
-<div ng-controller="Home">
-    <div class="col-sm-6">
-        @foreach(var item in Model)
-        {
-            <p>@item.GramProtein @item.PostDate</p>
-         //   <p>@(item.GramProtein + item.Consumable.ProteinPer100Gram)</p>
-        }
+<div ng-app="proteinNeed">
+    <div class="col-sm-6" ng-controller="pNeedController">
+        <table>
+            <tr>
+                <td>Product</td>
+                <td>Grams consumed</td>
+                <td>Total amount of proteins</td>
+            </tr>
+            @if (Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Consumable.ConsumableName</td>
+                        <td>@item.GramProtein</td>
+                        <td>@(item.GramProtein * item.Consumable.ProteinPer100Gram)</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>no items in list :D</tr>
+            }
+            <tr>
+                <td>
+                    <input type="text" ng-model="product.potato" />
+                    
+                </td>
+                <td>
+                    <input type="number" min="0" max="99" ng-model="consumed" />
+                </td>
+                <td>
+                    {{pNeed()}}
+                </td>
+            </tr>
+            <tr></tr>
+            {{showProduct()}}
+        </table>
+
     </div>
     <div class="col-sm-6">
 
-        <div class="col-sm-12" ng-app="" ng-model="product">
+        <div class="col-sm-12" ng-app="">
 
             <input type="number" ng-model="input" min="0" max="99" required />
-
-            {{input}}
-
-            </div>
-
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Normal
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="UserConditions">
-                    <li><a href="?c=1">Normal</a></li>
-                    <li><a href="?c=2">Sick</a></li>
-                    <li><a href="?c=3">Training</a></li>
-                </ul>
-            </div>
+            
         </div>
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Normal
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="UserConditions">
+                <li><a href="?c=1">Normal</a></li>
+                <li><a href="?c=2">Sick</a></li>
+                <li><a href="?c=3">Training</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
