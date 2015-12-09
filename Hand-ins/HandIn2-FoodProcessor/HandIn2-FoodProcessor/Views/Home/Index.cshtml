@@ -39,7 +39,8 @@
             }
             <tr>
                 <td>
-                    <input type="text" ng-model="product.potato" />               
+                    <input type="text" ng-model="product.potato" />
+                    
                 </td>
                 <td>
                     <input type="number" min="0" max="99" ng-model="consumed" />
@@ -54,24 +55,23 @@
 
     </div>
     <div class="col-sm-6">
-        <div class="col-sm-6">
-            <input type="number" ng-model="weight" min="0" max="99" required />
+
+        <div class="col-sm-12" ng-app="">
+
+            <input type="number" ng-model="input" min="0" max="99" required />
+            
         </div>
-        <div class="col-sm-6">
-            {{showProteinNeed()}}
-        </div>
-        <div class="col-sm-12">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Normal
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="UserConditions">
-                    <li>Normal</li>
-                    <li>Sick</li>
-                    <li>Training</li>
-                </ul>
-            </div>
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Normal
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="UserConditions">
+                <li><a href="?c=1">Normal</a></li>
+                <li><a href="?c=2">Sick</a></li>
+                <li><a href="?c=3">Training</a></li>
+            </ul>
         </div>
     </div>
 </div>
