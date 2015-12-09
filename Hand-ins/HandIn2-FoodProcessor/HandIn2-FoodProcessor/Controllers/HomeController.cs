@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net.Http;
+using System.Net;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using HandIn2_FoodProcessor.Models;
@@ -32,14 +34,30 @@ namespace HandIn2_FoodProcessor.Controllers
                 derp.GramProtein = 100;
                 db.Posts.Add(derp);
                 db.SaveChanges();
+
+                derp.User = user;
+                derp.PostDate = DateTime.Now;
+                derp.Consumable = db.Consumables.Find(3);
+                derp.GramProtein = 200;
+                db.Posts.Add(derp);
+                db.SaveChanges();
             }
 
 
             
             List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();
+            foreach(var item in potato)
+            {
+                item.Consumable = db.Consumables.Find(1);
+            }
             
             
             return View(potato);
+        }
+
+        public void AddUserConsumable(int userId, string consumableName, double proteinPer100)
+        {
+
         }
     }
 }
