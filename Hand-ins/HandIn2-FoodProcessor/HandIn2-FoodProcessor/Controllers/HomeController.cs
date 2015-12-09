@@ -38,12 +38,7 @@ namespace HandIn2_FoodProcessor.Controllers
             
             
             List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();
-            foreach(var item in potato)
-            {
-
-            }
-            var der = 0;
-            
+           
             
             return View(potato);
         }
