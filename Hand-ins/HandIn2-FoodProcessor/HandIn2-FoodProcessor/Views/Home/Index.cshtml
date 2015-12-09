@@ -39,8 +39,25 @@
             }
             <tr>
                 <td>
-                    <input type="text" ng-model="product.picked" />
-                    
+                    <input type="text" ng-model="product.picked" id="productID" oninput="find()" />
+                    <script>
+                        var uri = 'api/products';
+
+                        function formatItem(item) {
+                            return item.Gram;
+                        }
+
+                        function find() {
+                            var id = $('#productID').val();
+                            $.getJSON(uri + '/' + id)
+                            .done(function (data) {
+                                $('#product').text(formatItem(data));
+                            })
+                            .fail(function (jqXHR, textStatus, err) {
+                                $('#product').text('Error ') + err;
+                            });
+                        }
+                    </script>
                 </td>
                 <td>
                     <input type="number" min="0" max="99" ng-model="consumed" />
@@ -48,18 +65,21 @@
                 <td>
                     {{pEaten()}}
                 </td>
+                <p id="productID"></p>
             </tr>
-            <tr></tr>
-            {{showProduct()}}
+            <tr><p id="productID"></p>{{showProduct()}}</tr>
+            
         </table>
 
     </div>
     <div class="col-sm-6" ng-controller="pNeedController">
 
-            <input type="number" ng-model="weight" min="0" max="99" required />
+            <input type="number" ng-model="weight" min="0"" required />
 
             <select ng-model="address.state"
                     ng-options="state.lookupCode as state.description for state in lov_state"></select>
-            <tt>{{ass}}</tt>
+            <tt>{{pNeed()}} {{address.state}} <-- den udregner ikke, men ændre værdien ._.</tt>
+
+        <p>En form til at tilføre et nyt produkt, lige som i opgave 1</p>
     </div>
 </div>

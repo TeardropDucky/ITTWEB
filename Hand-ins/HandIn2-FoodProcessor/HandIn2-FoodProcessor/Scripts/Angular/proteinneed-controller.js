@@ -6,7 +6,7 @@
             picked: ''
         };
         $scope.showProduct = function () {
-            return $scope.product.potato;
+            return $scope.product.picked;
         };
 
         $scope.consumed = 0;
@@ -28,6 +28,9 @@
         ];
 
         $scope.pNeed = function(){
-            return $scope.weight + $scope.addresses.state;
+            return $scope.weight + $scope.address.lookupCode;
         };
+
+
+
     });
