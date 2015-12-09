@@ -40,24 +40,41 @@
             <tr>
                 <td>
                     <input type="text" ng-model="product.picked" id="productID" oninput="find()" />
-                    <script>
-                        var uri = 'api/products';
 
-                        function formatItem(item) {
-                            return item.Gram;
-                        }
 
-                        function find() {
-                            var id = $('#productID').val();
-                            $.getJSON(uri + '/' + id)
-                            .done(function (data) {
-                                $('#product').text(formatItem(data));
-                            })
-                            .fail(function (jqXHR, textStatus, err) {
-                                $('#product').text('Error ') + err;
-                            });
-                        }
-                    </script>
+    <script>
+    var uri = 'api/products';
+
+    $(document).ready(function () {
+        // Send an AJAX request
+        $.getJSON(uri)
+            .done(function (data) {
+                // On success, 'data' contains a list of products.
+                $.each(data, function (key, item) {
+                    // Add a list item for the product.
+                    $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                });
+            });
+    });
+
+    function formatItem(item) {
+        //return item.Name + ': ' + item.Gram + 'gram';
+        return item.Gram + 'gram';
+    }
+
+    function find() {
+        var id = $('#prodId').val();
+        $.getJSON(uri + '/' + id)
+            .done(function (data) {
+                $('#product').text(formatItem(data));
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#product').text('Error: ' + err);
+            });
+    }
+
+   </script>
+
                 </td>
                 <td>
                     <input type="number" min="0" max="99" ng-model="consumed" />
