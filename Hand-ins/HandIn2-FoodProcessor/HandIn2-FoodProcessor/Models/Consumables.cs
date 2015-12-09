@@ -15,6 +15,6 @@ namespace HandIn2_FoodProcessor.Models
         public string ConsumableName { get; set; }
         public double ProteinPer100Gram { get; set; }
 
-        public UserInfo User { get; set; }
+        //public UserInfo User { get; set; }
     }
 }

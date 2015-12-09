@@ -14,8 +14,8 @@
 
 <h2>@ViewBag.Title.</h2>
 
-<div ng-controller="Home">
-    <div class="col-sm-6">
+<div ng-app="proteinNeed">
+    <div class="col-sm-6" ng-controller="pNeedController">
         <table>
             <tr>
                 <td>Product</td>
@@ -39,38 +39,38 @@
             }
             <tr>
                 <td>
-                    <input type="text" ng-controller="Home"/>
+                    <input type="text" ng-model="product.potato" />
+                    
                 </td>
                 <td>
-                    <input type="number" min="0" max="99" />
+                    <input type="number" min="0" max="99" ng-model="consumed" />
                 </td>
                 <td>
-                    <p> </p>
+                    {{pNeed()}}
                 </td>
             </tr>
+            {{showProduct()}}
         </table>
 
     </div>
     <div class="col-sm-6">
 
-        <div class="col-sm-12" ng-app="" >
+        <div class="col-sm-12" ng-app="">
 
             <input type="number" ng-model="input" min="0" max="99" required />
-
-            {{pNeed()}}
-
+            
         </div>
 
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Normal
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="UserConditions">
-                    <li><a href="?c=1">Normal</a></li>
-                    <li><a href="?c=2">Sick</a></li>
-                    <li><a href="?c=3">Training</a></li>
-                </ul>
-            </div>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Normal
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="UserConditions">
+                <li><a href="?c=1">Normal</a></li>
+                <li><a href="?c=2">Sick</a></li>
+                <li><a href="?c=3">Training</a></li>
+            </ul>
         </div>
+    </div>
 </div>
