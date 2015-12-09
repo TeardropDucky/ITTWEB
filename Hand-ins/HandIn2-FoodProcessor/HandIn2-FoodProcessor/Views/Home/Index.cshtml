@@ -8,27 +8,54 @@
     ViewBag.Title = "Happy little place";
 }
 
-@section scripts{ <script src="~/Scripts/angular.js"> </script>}
+@section scripts{ 
+    @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/Scripts/Angular/proteinneed-controller.js")}
 
 <h2>@ViewBag.Title.</h2>
 
 <div ng-controller="Home">
     <div class="col-sm-6">
-        @foreach(var item in Model)
-        {
-            <p>@item.GramProtein @item.PostDate</p>
-            <p>@(item.GramProtein + item.Consumable.ProteinPer100Gram)</p>
-        }
+        <table>
+            <tr>
+                <td>Product</td>
+                <td>Grams consumed</td>
+                <td>Total amount of proteins</td>
+            </tr>
+            @if (Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Consumable.ConsumableName</td>
+                        <td>@item.GramProtein</td>
+                        <td>@(item.GramProtein * item.Consumable.ProteinPer100Gram)</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>no items in list :D</tr>
+            }
+            <tr>
+                <td>
+                    <input type="text" ng-
+                </td>
+                <td>Grams consumed</td>
+                <td>Total amount of proteins</td>
+            </tr>
+        </table>
+
     </div>
     <div class="col-sm-6">
 
-        <div class="col-sm-12" ng-app="" ng-model="product">
+        <div class="col-sm-12" ng-app="" ng-controller="pNeedController">
 
             <input type="number" ng-model="input" min="0" max="99" required />
 
-            {{input}}
+            {{pNeed()}}
 
-            </div>
+        </div>
 
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="UserConditions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
