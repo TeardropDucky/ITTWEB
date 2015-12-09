@@ -34,7 +34,6 @@ namespace HandIn2_FoodProcessor.Controllers
                 db.Posts.Add(derp);
                 db.SaveChanges();
             }
-
             
             
             List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();

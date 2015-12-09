@@ -10,7 +10,8 @@ namespace HandIn2_FoodProcessor.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;            
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(HandIn2_FoodProcessor.Models.ApplicationDbContext context)
