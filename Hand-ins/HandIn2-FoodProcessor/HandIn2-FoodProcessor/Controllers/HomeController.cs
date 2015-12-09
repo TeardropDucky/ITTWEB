@@ -41,5 +41,10 @@ namespace HandIn2_FoodProcessor.Controllers
             
             return View(potato);
         }
+
+        public void AddUserConsumable(int userId, string consumableName, double proteinPer100)
+        {
+
+        }
     }
 }
