@@ -39,17 +39,21 @@
             }
             <tr>
                 <td>
-                    <input type="text" ng-
+                    <input type="text" ng-controller="Home"/>
                 </td>
-                <td>Grams consumed</td>
-                <td>Total amount of proteins</td>
+                <td>
+                    <input type="number" min="0" max="99" />
+                </td>
+                <td>
+                    <p> </p>
+                </td>
             </tr>
         </table>
 
     </div>
     <div class="col-sm-6">
 
-        <div class="col-sm-12" ng-app="" ng-controller="pNeedController">
+        <div class="col-sm-12" ng-app="" >
 
             <input type="number" ng-model="input" min="0" max="99" required />
 
