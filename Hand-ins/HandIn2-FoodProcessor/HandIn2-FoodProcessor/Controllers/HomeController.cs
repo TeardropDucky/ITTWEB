@@ -17,6 +17,7 @@ namespace HandIn2_FoodProcessor.Controllers
         public ActionResult Index()
         {
             var userID = User.Identity.GetUserName();
+            db.Configuration.LazyLoadingEnabled = true;
             if (db.UserInfoes.Where(c => c.Name == userID).ToList().Count == 0)
             {
                 var user = new UserInfo();
@@ -34,9 +35,14 @@ namespace HandIn2_FoodProcessor.Controllers
                 db.SaveChanges();
             }
 
-
+            
             
             List<Posts> potato = db.Posts.Where(c => c.User.Name == userID).ToList();
+            foreach(var item in potato)
+            {
+
+            }
+            var der = 0;
             
             
             return View(potato);

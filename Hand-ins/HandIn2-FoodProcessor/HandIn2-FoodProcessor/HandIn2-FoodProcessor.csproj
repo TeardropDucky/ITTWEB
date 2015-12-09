@@ -185,6 +185,10 @@
     <Compile Include="Migrations\201512071606389_Initial.Designer.cs">
       <DependentUpon>201512071606389_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512091314050_AddConsumableUser.cs" />
+    <Compile Include="Migrations\201512091314050_AddConsumableUser.Designer.cs">
+      <DependentUpon>201512091314050_AddConsumableUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Consumables.cs" />
@@ -197,10 +201,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\FoodDatabase.mdf" />
-    <Content Include="App_Data\FoodDatabase_log.ldf">
-      <DependentUpon>FoodDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -278,6 +278,9 @@
     <EmbeddedResource Include="Migrations\201512071606389_Initial.resx">
       <DependentUpon>201512071606389_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512091314050_AddConsumableUser.resx">
+      <DependentUpon>201512091314050_AddConsumableUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -285,6 +288,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
