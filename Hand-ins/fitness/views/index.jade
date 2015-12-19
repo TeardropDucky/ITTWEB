@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to our test
+
+    // Wrapper
+    #wrapper
+
+        // EXERCISE LIST
+        h2 Exercise List
+        #exerciseList
+            table
+                thead
+                    th Exercise
+                    th Description
+                    th Set
+                    th Amount
+                    th Delete?
+                tbody
+        // /EXERCISE LIST
+
+        // ADD EXERCISE
+        h2 Add Exercise
+        #addExercise
+            fieldset
+                input#inputExerciseName(type='text', placeholder='Exercise')
+                input#inputDescription(type='text', placeholder='Description')
+                br
+                input#inputSet(type='number', placeholder='Set')
+                input#inputAmount(type='text', placeholder='Amount')
+                br
+                button#btnAddExercise Add Exercise
+        // /ADD EXERCISE
+
+    // /WRAPPER
+
+    a(class='button', href='/diploma') Completed the program? Get your diploma here!
